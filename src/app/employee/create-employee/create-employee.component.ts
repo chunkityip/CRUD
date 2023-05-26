@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
 import { EmployeeService } from 'src/app/service/employee.service';
 import { Employee } from 'src/app/model/employee.model';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -10,14 +10,14 @@ import {Router} from '@angular/router';
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.css']
 })
-export class CreateEmployeeComponent implements  OnInit {
+export class CreateEmployeeComponent implements OnInit {
 
   employee  : Employee = new Employee();
   submitted = false;
 
   constructor(private employeeService : EmployeeService , private router : Router) { }
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   onSubmit() {
     this.submitted = true;
